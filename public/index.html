@@ -7,11 +7,12 @@
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  
+
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 
   <script>
     console.log("Hello World -- You won't see this!");
+    alert("And neither this ;-)")
   </script>
 </head>
 
@@ -21,6 +22,13 @@
     <h3>Check the Response-headers</h3>
     <h3>Check the Console</h3>
     <h3>Check the source (of this file) to see what triggers some of the "errors"</h3>
+    <br />
+    <div style="font-size: 18px;">
+      <ul>
+        <li><a href="/api/json">Get some json without CONTENT-TYPE</a><br /></li>
+        <li><a href="/api/jsonwithcontenttype">Get some json with CONTENT-TYPE</a></li>
+      </ul>
+    </div>
   </div>
 </body>
 

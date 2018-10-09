@@ -4,7 +4,6 @@ const app = express();
 app.use(helmet());
 
 
-
 //This header is set via Nginx, see README.md
 // var ninetyDaysInSeconds = 7776000
 // app.use(helmet.hpkp({
@@ -23,4 +22,11 @@ app.use(helmet.contentSecurityPolicy({
 app.use(express.static('public'))
 
 app.get("/",(req,res)=>res.send("Check the Response-headers"));
+app.get("/api/json",(req,res)=>{
+  res.send(JSON.stringify({msg: "I'm a cool litle JSON-encoded object",status: true,statusCode: 200},null,2));
+})
+app.get("/api/jsonwithcontenttype",(req,res)=>{
+  res.set('Content-Type', 'application/json');
+  res.send(JSON.stringify({msg: "I'm a cool litle JSON-encoded object",status: true,statusCode: 200},null,2));
+})
 app.listen (7654,()=>console.log("Server started, listening on 7654"));
